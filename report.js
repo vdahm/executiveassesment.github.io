@@ -34,6 +34,69 @@ const profileFields = {
 let answers = loadJson(STORAGE_KEY, {});
 let profile = loadJson(PROFILE_KEY, {});
 let latestResult = null;
+let resultSubmissionInProgress = false;
+
+function createResultToken() {
+  const bytes = new Uint8Array(24);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes, byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function buildPersonalResultUrl(token) {
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.hash = "";
+  url.searchParams.set("result", token);
+  return url.toString();
+}
+
+function getRequestedResultUrl() {
+  const url = new URL(window.location.href);
+  const token = url.searchParams.get("result");
+  return token ? buildPersonalResultUrl(token) : null;
+}
+
+function renderPersonalResultLink(resultUrl) {
+  let box = document.getElementById("personalResultLinkBox");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "personalResultLinkBox";
+    box.className = "consulting-card screen-only";
+    box.style.margin = "18px 0";
+    box.innerHTML = `
+      <span class="card-kicker">PERSÖNLICHER ERGEBNIS-LINK</span>
+      <h3>Dieses Ergebnis jederzeit wieder aufrufen</h3>
+      <p>Bewahren Sie diesen persönlichen Link sicher auf. Jeder, der den Link kennt, kann das Ergebnis öffnen.</p>
+      <div class="field">
+        <label for="personalResultLink">Persönlicher Link</label>
+        <input id="personalResultLink" type="text" readonly>
+      </div>
+      <div class="actions">
+        <a class="btn btn-secondary" id="openPersonalResultLink" target="_blank" rel="noopener">Ergebnis-Link öffnen</a>
+        <button class="btn btn-gold" id="copyPersonalResultLink" type="button">Link kopieren</button>
+      </div>
+    `;
+    const actions = document.querySelector("#resultsView .report-actions");
+    actions.parentNode.insertBefore(box, actions);
+  }
+
+  const input = document.getElementById("personalResultLink");
+  const openLink = document.getElementById("openPersonalResultLink");
+  const copyButton = document.getElementById("copyPersonalResultLink");
+  input.value = resultUrl;
+  openLink.href = resultUrl;
+  copyButton.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(resultUrl);
+      showToast("Persönlicher Ergebnis-Link kopiert.");
+    } catch (error) {
+      input.focus();
+      input.select();
+      document.execCommand("copy");
+      showToast("Persönlicher Ergebnis-Link kopiert.");
+    }
+  };
+}
 
 function loadJson(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); }
@@ -335,6 +398,8 @@ async function saveResultToSupabase(result) {
     ? getCourseRecommendations(result)
     : [];
 
+  const resultUrl = buildPersonalResultUrl(createResultToken());
+
   const payload = {
     name: result.profile.name || null,
     position: result.profile.position || null,
@@ -345,7 +410,8 @@ async function saveResultToSupabase(result) {
     total_score: result.overall,
     result_level: result.narrative.title,
     recommendations: recommendations,
-    pdf_status: "pending"
+    pdf_status: "pending",
+    result_url: resultUrl
   };
 
   try {
@@ -364,14 +430,78 @@ async function saveResultToSupabase(result) {
 
     if (!response.ok) {
       console.error("Supabase Fehler:", await response.text());
+      return null;
     }
+
+    return resultUrl;
   } catch (error) {
     console.error("Supabase Verbindung fehlgeschlagen:", error);
+    return null;
   }
 }
 
-function openResults() {
-  if (!validateComplete()) return;
+async function loadResultFromPersonalUrl() {
+  const resultUrl = getRequestedResultUrl();
+  if (!resultUrl) return false;
+
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/assessment_results?select=created_at,name,position,company,email,answers&limit=1`,
+      {
+        method: "GET",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "x-result-url": resultUrl
+        }
+      }
+    );
+
+    if (!response.ok) {
+      console.error("Ergebnis konnte nicht geladen werden:", await response.text());
+      showToast("Der persönliche Ergebnis-Link konnte nicht geladen werden.");
+      return false;
+    }
+
+    const rows = await response.json();
+    if (!rows.length) {
+      showToast("Für diesen persönlichen Link wurde kein Ergebnis gefunden.");
+      return false;
+    }
+
+    const row = rows[0];
+    answers = row.answers || {};
+    profile = {
+      name: row.name || "",
+      position: row.position || "",
+      company: row.company || "",
+      email: row.email || ""
+    };
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+    buildSurvey();
+    restoreProfile();
+    updateStats();
+
+    latestResult = createResult();
+    latestResult.createdAt = row.created_at ? new Date(row.created_at) : new Date();
+
+    renderResultPage(latestResult);
+    renderPersonalResultLink(resultUrl);
+    assessmentView.hidden = true;
+    resultsView.hidden = false;
+    window.scrollTo({top: 0});
+    return true;
+  } catch (error) {
+    console.error("Persönlicher Ergebnis-Link konnte nicht geladen werden:", error);
+    showToast("Der persönliche Ergebnis-Link konnte nicht geladen werden.");
+    return false;
+  }
+}
+
+async function openResults() {
+  if (resultSubmissionInProgress || !validateComplete()) return;
+  resultSubmissionInProgress = true;
 
   profile = {
     name: profileFields.name.value.trim(),
@@ -387,7 +517,14 @@ function openResults() {
   resultsView.hidden = false;
   window.scrollTo({top:0,behavior:"smooth"});
 
-  saveResultToSupabase(latestResult);
+  const resultUrl = await saveResultToSupabase(latestResult);
+  if (resultUrl) {
+    renderPersonalResultLink(resultUrl);
+  } else {
+    showToast("Ergebnis angezeigt, persönlicher Link konnte aber nicht gespeichert werden.");
+  }
+
+  resultSubmissionInProgress = false;
 }
 
 function backToSurvey() {
@@ -583,6 +720,8 @@ updateStats();
 
 const savedAt = localStorage.getItem(SAVED_KEY);
 showSavedAt(savedAt ? new Date(savedAt) : null);
+
+loadResultFromPersonalUrl();
 
 // MOBILE INTERACTION FIX
 (function(){
