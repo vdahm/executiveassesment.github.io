@@ -485,6 +485,7 @@ async function loadResultFromPersonalUrl() {
 
     latestResult = createResult();
     latestResult.createdAt = row.created_at ? new Date(row.created_at) : new Date();
+    latestResult.personalResultUrl = resultUrl;
 
     renderResultPage(latestResult);
     renderPersonalResultLink(resultUrl);
@@ -519,6 +520,7 @@ async function openResults() {
 
   const resultUrl = await saveResultToSupabase(latestResult);
   if (resultUrl) {
+    latestResult.personalResultUrl = resultUrl;
     renderPersonalResultLink(resultUrl);
   } else {
     showToast("Ergebnis angezeigt, persönlicher Link konnte aber nicht gespeichert werden.");
@@ -659,8 +661,22 @@ function openEmailDraft(result) {
     return;
   }
 
+  const personalResultUrl =
+    result.personalResultUrl ||
+    document.getElementById("personalResultLink")?.value ||
+    getRequestedResultUrl();
+
+  if (!personalResultUrl) {
+    showToast("Der persönliche Ergebnis-Link konnte nicht ermittelt werden.");
+    return;
+  }
+
   const subject = `Executive Self-Assessment – Ergebnis ${result.profile.name || ""}`.trim();
   const lines = [
+    `Guten Tag ${result.profile.name || ""},`,
+    "wir bedanken uns im Namen des DCI und Volker Dahm dafür, dass Sie sich Zeit genommen haben, an unserer Umfrage teilzunehmen. Anbei finden Sie die kurze Zusammenfassung Ihrer Ergebnisse.",
+    `Zum Nachlesen und zur direkten Verlinkung der Kurse geht es hier lang: ${personalResultUrl}`,
+    "",
     `Gesamtscore: ${result.overall.toFixed(2)} von 5,00`,
     "",
     result.narrative.title,
@@ -675,7 +691,19 @@ function openEmailDraft(result) {
       ...group.courses.map(course => `- ${course.course_name} | ${course.provider}${course.url ? ` | ${course.url}` : ""}`)
     ]),
     "",
-    "Hinweis: Den ausführlichen Executive PDF-Report können Sie auf der Ergebnisseite herunterladen."
+    "Hinweis: Den ausführlichen Executive PDF-Report können Sie auf der Ergebnisseite herunterladen.",
+    "",
+    "Beste Grüße | Best regards",
+    "Volker Dahm | Dipl.Ing. | MBA",
+    "Passion for People | Executive & Interim Search",
+    "",
+    "Book a meeting  👉  https://calendly.com/vdahm-1/meet-volkerday",
+    "",
+    "mobil: +49 152 389 30 962",
+    "Mail: volker.dahm@passionforpeople.de",
+    "LinkedIn: https://www.linkedin.com/in/volkerdahm/",
+    "",
+    "Internet: https://passionforpeople.de/Volker-Dahm"
   ];
 
   window.location.href = `mailto:${encodeURIComponent(result.profile.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
