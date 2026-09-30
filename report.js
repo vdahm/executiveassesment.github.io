@@ -674,6 +674,7 @@ function openEmailDraft(result) {
   const subject = `Executive Self-Assessment – Ergebnis ${result.profile.name || ""}`.trim();
   const lines = [
     `Guten Tag ${result.profile.name || ""},`,
+    "",
     "wir bedanken uns im Namen des DCI und Volker Dahm dafür, dass Sie sich Zeit genommen haben, an unserer Umfrage teilzunehmen. Anbei finden Sie die kurze Zusammenfassung Ihrer Ergebnisse.",
     `Zum Nachlesen und zur direkten Verlinkung der Kurse geht es hier lang: ${personalResultUrl}`,
     "",
