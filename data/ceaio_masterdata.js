@@ -1,6 +1,6 @@
 window.CEAIO_MASTER_DATA = {
   "schemaVersion": "1.0",
-  "source": "Volker_CEAIO_Mastermatrix_final_mit_Skillabdeckung_v3_06-10-2026.xlsx",
+  "source": "Volker_CEAIO_Master.xlsx",
   "rules": {
     "score5": "no_training",
     "score4": "optional_refresh",
@@ -15,17 +15,17 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich blockiere mir wöchentlich mindestens 30% meiner Arbeitszeit exklusiv für strategische Zukunftsfragen, anstatt mich im operativen Tagesgeschäft zu verlieren.",
       "skill": "Strategische Priorisierung & Zukunftsfokus",
       "courseIds": [
-        "K081",
-        "K084",
         "K007",
         "K010",
         "K021",
         "K063",
-        "K072"
+        "K072",
+        "K081",
+        "K084"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -35,13 +35,13 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich nutze anerkannte Frameworks (z. B. McKinsey Horizons oder Porter), um Investitionen methodisch auf kurzfristige Effizienz und radikale, neue Geschäftsmodelle aufzuteilen.",
       "skill": "Strategie-Frameworks & Portfolioallokation",
       "courseIds": [
+        "K007",
         "K083",
-        "K084",
-        "K007"
+        "K084"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -55,8 +55,8 @@ window.CEAIO_MASTER_DATA = {
         "K081"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -69,16 +69,16 @@ window.CEAIO_MASTER_DATA = {
         "K004",
         "K005",
         "K008",
+        "K009",
+        "K010",
         "K081",
         "K082",
         "K083",
-        "K084",
-        "K009",
-        "K010"
+        "K084"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -93,8 +93,8 @@ window.CEAIO_MASTER_DATA = {
         "K003"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -104,19 +104,19 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich verstehe die technologischen Unterschiede zwischen traditioneller IT-Automatisierung und probabilistischen Systemen (wie Generativer KI) so tief, dass ich Roadmaps sicher bewerten kann.",
       "skill": "Automatisierung vs. probabilistische/Generative KI",
       "courseIds": [
+        "K009",
+        "K012",
         "K013",
         "K019",
-        "K082",
-        "K083",
-        "K012",
-        "K009",
         "K020",
         "K045",
-        "K064"
+        "K064",
+        "K082",
+        "K083"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -126,12 +126,12 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich kenne die logische Architektur unserer Unternehmens-Daten-Pipelines und Cloud-Infrastrukturen, ohne mich von technischen Fachbegriffen blenden zu lassen.",
       "skill": "Daten-, Cloud- & Pipeline-Verständnis",
       "courseIds": [
-        "K060",
-        "K017"
+        "K017",
+        "K060"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -147,8 +147,8 @@ window.CEAIO_MASTER_DATA = {
         "K082"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -163,8 +163,8 @@ window.CEAIO_MASTER_DATA = {
         "K016"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -174,17 +174,17 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich halte mein eigenes technologisches Wissen über Disruptionen (z. B. Quantencomputing, KI-Agenten) durch kontinuierliche Weiterbildung aktiv up-to-date.",
       "skill": "Technologische Zukunftskompetenz & Continuous Learning",
       "courseIds": [
-        "K018",
-        "K081",
-        "K011",
         "K009",
+        "K011",
+        "K018",
         "K055",
         "K063",
-        "K064"
+        "K064",
+        "K081"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -194,19 +194,19 @@ window.CEAIO_MASTER_DATA = {
       "question": "Wir haben im Vorstand/Board klare, institutionalisierte Eskalationsprozesse für den Fall etabliert, dass automatisierte Systeme kritische Fehlentscheidungen treffen.",
       "skill": "AI-Governance & Eskalationsmanagement",
       "courseIds": [
+        "K010",
+        "K021",
         "K022",
         "K023",
         "K024",
-        "K083",
-        "K010",
-        "K021",
         "K029",
         "K044",
-        "K046"
+        "K046",
+        "K083"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -221,8 +221,8 @@ window.CEAIO_MASTER_DATA = {
         "K080"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -237,8 +237,8 @@ window.CEAIO_MASTER_DATA = {
         "K027"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -250,12 +250,12 @@ window.CEAIO_MASTER_DATA = {
       "courseIds": [
         "K025",
         "K028",
-        "K080",
-        "K046"
+        "K046",
+        "K080"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -271,8 +271,8 @@ window.CEAIO_MASTER_DATA = {
         "K082"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -282,14 +282,14 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich treffe strategische Richtungsentscheidungen primär auf Basis von Echtzeit-Daten und prädiktiven Analysen (Predictive Analytics) statt rein nach Bauchgefühl.",
       "skill": "Data-driven Decision Making & Predictive Analytics",
       "courseIds": [
-        "K083",
+        "K010",
         "K034",
         "K035",
-        "K010"
+        "K083"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -300,14 +300,14 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Management-Dashboards & Digital-Performance-Messung",
       "courseIds": [
         "K031",
-        "K036",
         "K032",
         "K033",
+        "K036",
         "K038"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -317,12 +317,12 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich treibe das Aufbrechen von abteilungsinternen Datensilos im Unternehmen aktiv voran, um eine übergreifende, datenbasierte Wertschöpfung zu ermöglichen.",
       "skill": "Datensilo-Auflösung & bereichsübergreifende Datenintegration",
       "courseIds": [
-        "K060",
-        "K038"
+        "K038",
+        "K060"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -332,13 +332,13 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich kann die statistische Signifikanz und Validität von Daten-Reports, die mir vom Management vorgelegt werden, treffsicher beurteilen und hinterfragen.",
       "skill": "Statistische Daten- & Analysekompetenz",
       "courseIds": [
-        "K037",
         "K034",
-        "K035"
+        "K035",
+        "K037"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -349,12 +349,12 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Datenorientierte Entscheidungs- & Führungskultur",
       "courseIds": [
         "K037",
-        "K039",
-        "K038"
+        "K038",
+        "K039"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -364,15 +364,15 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich kenne die persönlichen, zivil- und strafrechtlichen Haftungsrisiken für Geschäftsführer und Vorstände bei Datenschutz- oder Technologieverstößen im Detail.",
       "skill": "Management-Haftung & regulatorisches Risikoverständnis",
       "courseIds": [
-        "K068",
-        "K043",
         "K029",
+        "K043",
         "K044",
-        "K046"
+        "K046",
+        "K068"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -382,16 +382,16 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich stelle sicher, dass alle in unserem Unternehmen eingesetzten Algorithmen und Tools proaktiv nach aktuellen Regulierungen (z. B. EU AI Act) klassifiziert und auditiert sind.",
       "skill": "EU AI Act & AI-Compliance/Audit",
       "courseIds": [
+        "K029",
         "K040",
         "K041",
         "K042",
-        "K029",
         "K044",
         "K046"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -401,13 +401,13 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich überprüfe systematisch, ob die Einhaltung von Nachhaltigkeitskriterien (ESG) fest in den Zielsystemen unserer Lieferanten und Technologiepartner verankert ist.",
       "skill": "ESG- & Nachhaltigkeits-Compliance",
       "courseIds": [
-        "K065",
         "K030",
+        "K065",
         "K080"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -422,8 +422,8 @@ window.CEAIO_MASTER_DATA = {
         "K042"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -438,8 +438,8 @@ window.CEAIO_MASTER_DATA = {
         "K042"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -450,13 +450,13 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Agiles & cross-funktionales Organisationsdesign",
       "courseIds": [
         "K047",
-        "K084",
         "K048",
-        "K051"
+        "K051",
+        "K084"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -471,8 +471,8 @@ window.CEAIO_MASTER_DATA = {
         "K051"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -482,13 +482,13 @@ window.CEAIO_MASTER_DATA = {
       "question": "In unserer C-Level-Nachfolgeplanung (Succession Planning) fordern wir messbare digitale Mindsets und technologische Führungskompetenzen für zukünftige Vorstände ein.",
       "skill": "Digital Succession Planning & Leadership Pipeline",
       "courseIds": [
+        "K049",
         "K052",
-        "K053",
-        "K049"
+        "K053"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -498,15 +498,15 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich stelle signifikante Budgets bereit, um ein kontinuierliches Upskilling-Programm für alle Hierarchieebenen zur Förderung der digitalen Kompetenz zu garantieren.",
       "skill": "Strategisches Upskilling & AI-Literacy-Entwicklung",
       "courseIds": [
+        "K021",
         "K050",
         "K054",
-        "K021",
         "K055",
         "K074"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -521,8 +521,8 @@ window.CEAIO_MASTER_DATA = {
         "K051"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -537,8 +537,8 @@ window.CEAIO_MASTER_DATA = {
         "K062"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -549,12 +549,12 @@ window.CEAIO_MASTER_DATA = {
       "skill": "API-Strategie & Interoperabilität",
       "courseIds": [
         "K057",
-        "K059",
-        "K058"
+        "K058",
+        "K059"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -569,8 +569,8 @@ window.CEAIO_MASTER_DATA = {
         "K062"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -585,8 +585,8 @@ window.CEAIO_MASTER_DATA = {
         "K062"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -599,8 +599,8 @@ window.CEAIO_MASTER_DATA = {
         "K060"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -613,8 +613,8 @@ window.CEAIO_MASTER_DATA = {
         "K068"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -627,8 +627,8 @@ window.CEAIO_MASTER_DATA = {
         "K067"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -643,8 +643,8 @@ window.CEAIO_MASTER_DATA = {
         "K071"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -657,8 +657,8 @@ window.CEAIO_MASTER_DATA = {
         "K070"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -668,12 +668,12 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich kann vor kritischen Medien, Investoren und der Öffentlichkeit den gesellschaftlichen und ethischen Wertbeitrag unserer Unternehmensstrategie souverän verteidigen.",
       "skill": "Executive Communication & ethische Positionierung",
       "courseIds": [
-        "K069",
-        "K025"
+        "K025",
+        "K069"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -683,20 +683,20 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich führe die KI-Transformation unseres Unternehmens aktiv von der ersten Pilotphase bis zur konzernweiten organisatorischen Skalierung.",
       "skill": "KI-Transformation & Skalierung",
       "courseIds": [
-        "K082",
-        "K084",
-        "K070",
-        "K071",
         "K010",
         "K021",
         "K045",
         "K055",
+        "K070",
+        "K071",
         "K072",
-        "K074"
+        "K074",
+        "K082",
+        "K084"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -711,8 +711,8 @@ window.CEAIO_MASTER_DATA = {
         "K072"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -722,15 +722,15 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich habe flexible Transformations-Governance-Strukturen installiert, um Prozesse und Geschäftsabläufe schnell an neue technologische KI-Entwicklungen anzupassen.",
       "skill": "Transformation Governance & organisatorische Agilität",
       "courseIds": [
-        "K073",
         "K070",
         "K071",
         "K072",
+        "K073",
         "K074"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -740,15 +740,15 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich bereite unsere Belegschaft und Führungskräfte durch gezielte Strategic Workforce Planning strukturell auf die sich verändernden Rollenprofile vor.",
       "skill": "Strategic Workforce Planning & Future Roles",
       "courseIds": [
+        "K049",
         "K052",
         "K053",
-        "K049",
         "K056",
         "K074"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -759,13 +759,13 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Change-KPIs & Transformationsmessung",
       "courseIds": [
         "K031",
-        "K036",
         "K032",
-        "K033"
+        "K033",
+        "K036"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -781,8 +781,8 @@ window.CEAIO_MASTER_DATA = {
         "K076"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -793,15 +793,15 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Outputorientiertes Performance Management",
       "courseIds": [
         "K031",
-        "K036",
         "K032",
         "K033",
+        "K036",
         "K076",
         "K077"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -812,14 +812,14 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Digitale Kollaboration & virtuelle Führungssysteme",
       "courseIds": [
         "K057",
-        "K059",
         "K058",
+        "K059",
         "K077",
         "K079"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -829,14 +829,14 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich setze flexible Arbeitsplatzmodelle gezielt ein, um im globalen War for Talents die besten digitalen Fach- und Führungskräfte an das Unternehmen zu binden.",
       "skill": "Flexible-Work-Talentstrategie",
       "courseIds": [
+        "K049",
         "K052",
         "K053",
-        "K049",
         "K079"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -846,15 +846,15 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich schaffe auch in rein virtuellen/hybriden Arbeitsumgebungen ein starkes Zugehörigkeitsgefühl, persönliche Bindung und gelebtes Vertrauen.",
       "skill": "Virtuelle Teamkultur & Vertrauensführung",
       "courseIds": [
-        "K078",
         "K075",
         "K076",
         "K077",
+        "K078",
         "K079"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -864,16 +864,16 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich besitze eine glasklare Vorstellung davon, wie die Symbiose zwischen menschlicher Belegschaft und autonomen KI-Agenten in 3 Jahren operationalisiert ist.",
       "skill": "Human-AI Workforce Design",
       "courseIds": [
-        "K066",
         "K009",
         "K055",
         "K056",
         "K064",
+        "K066",
         "K072"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -883,12 +883,12 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich kann präzise definieren, an welchen Schnittstellen unserer Wertschöpfungskette menschliche Empathie zwingend erhalten bleiben muss und wo digitale Effizienz dominiert.",
       "skill": "Human-AI-Aufgabenteilung & Empathie-Schnittstellen",
       "courseIds": [
-        "K066",
-        "K056"
+        "K056",
+        "K066"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -903,8 +903,8 @@ window.CEAIO_MASTER_DATA = {
         "K056"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -914,15 +914,15 @@ window.CEAIO_MASTER_DATA = {
       "question": "Ich habe eine Organisationsstruktur etabliert, die flexibel genug ist, sich innerhalb kürzester Zeit an neuartige technologische Paradigmen anzupassen.",
       "skill": "Adaptive Organisationsgestaltung",
       "courseIds": [
-        "K081",
-        "K084",
+        "K056",
         "K070",
         "K071",
-        "K056"
+        "K081",
+        "K084"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     },
@@ -933,12 +933,12 @@ window.CEAIO_MASTER_DATA = {
       "skill": "Zukunftsfähige, inklusive & ethische Führung",
       "courseIds": [
         "K065",
-        "K080",
-        "K079"
+        "K079",
+        "K080"
       ],
       "scoring": {
-        "5": "Kein Weiterbildungsbedarf",
         "4": "Optional auffrischen / vertiefen",
+        "5": "Kein Weiterbildungsbedarf",
         "1-3": "Weiterbildungsbedarf"
       }
     }
@@ -1102,8 +1102,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "MIT Sloan Executive Education",
       "name": "Artificial Intelligence: Implications for Business Strategy",
       "competencyAreas": [
-        "Strategy & Business Model Skills",
-        "Technical & AI Literacy",
+        "Strategy & Business Model Skills\r",
+        "Technical & AI Literacy\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -1126,9 +1126,9 @@ window.CEAIO_MASTER_DATA = {
       "provider": "INSEAD",
       "name": "Transforming Your Business with AI",
       "competencyAreas": [
-        "Strategy & Business Model Skills",
-        "Governance Skills",
-        "Change & Transformation Skills",
+        "Strategy & Business Model Skills\r",
+        "Governance Skills\r",
+        "Change & Transformation Skills\r",
         "Data & Analytics Skills"
       ],
       "skills": [
@@ -1345,9 +1345,9 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Microsoft Learn",
       "name": "Transform your business with Microsoft AI",
       "competencyAreas": [
-        "Governance Skills",
-        "Team & Leadership Skills",
-        "Strategy & Business Model Skills",
+        "Governance Skills\r",
+        "Team & Leadership Skills\r",
+        "Strategy & Business Model Skills\r",
         "Change & Transformation Skills"
       ],
       "skills": [
@@ -1431,7 +1431,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "AISDI",
       "name": "AI for Board Members & Corporate Governance",
       "competencyAreas": [
-        "Governance Skills",
+        "Governance Skills\r",
         "Soft Skills"
       ],
       "skills": [
@@ -1510,7 +1510,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "IAPP",
       "name": "Artificial Intelligence Governance Professional (AIGP) Training",
       "competencyAreas": [
-        "Governance Skills",
+        "Governance Skills\r",
         "Compliance Skills"
       ],
       "skills": [
@@ -1532,7 +1532,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Microsoft Learn",
       "name": "Embrace responsible AI principles and practices",
       "competencyAreas": [
-        "Governance Skills",
+        "Governance Skills\r",
         "Compliance Skills"
       ],
       "skills": [
@@ -1553,8 +1553,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Udemy",
       "name": "Microsoft Power BI: Data Analysis & AI Dashboards (2026)",
       "competencyAreas": [
-        "Data & Analytics Skills",
-        "Change & Transformation Skills",
+        "Data & Analytics Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1576,8 +1576,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Pideya Learning Academy",
       "name": "AI for Strategic Decision-Making and KPIs",
       "competencyAreas": [
-        "Data & Analytics Skills",
-        "Change & Transformation Skills",
+        "Data & Analytics Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1599,8 +1599,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Coursera",
       "name": "Build Interactive Dashboards for Meaningful Insights",
       "competencyAreas": [
-        "Data & Analytics Skills",
-        "Change & Transformation Skills",
+        "Data & Analytics Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1662,8 +1662,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Evolvix Skills",
       "name": "Advanced BI Tools & Techniques Training Course",
       "competencyAreas": [
-        "Data & Analytics Skills",
-        "Change & Transformation Skills",
+        "Data & Analytics Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1827,7 +1827,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Bitkom Akademie",
       "name": "KI-Compliance Beauftragter",
       "competencyAreas": [
-        "Governance Skills",
+        "Governance Skills\r",
         "Compliance Skills"
       ],
       "skills": [
@@ -1849,7 +1849,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "TÜV Rheinland Akademie",
       "name": "AI-Coordinator (TÜV)",
       "competencyAreas": [
-        "Technical & AI Literacy",
+        "Technical & AI Literacy\r",
         "Change & Transformation Skills"
       ],
       "skills": [
@@ -1870,7 +1870,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Bitkom Akademie",
       "name": "Auditor für KI-Managementsysteme nach ISO/IEC 42001",
       "competencyAreas": [
-        "Governance Skills",
+        "Governance Skills\r",
         "Compliance Skills"
       ],
       "skills": [
@@ -1893,7 +1893,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Bitkom Akademie",
       "name": "AI Leadership",
       "competencyAreas": [
-        "Team & Leadership Skills",
+        "Team & Leadership Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1916,7 +1916,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "HNU Hochschule Neu-Ulm",
       "name": "Certified AI Leadership",
       "competencyAreas": [
-        "Team & Leadership Skills",
+        "Team & Leadership Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1939,8 +1939,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "London School of Economics",
       "name": "AI Leadership Accelerator",
       "competencyAreas": [
-        "Team & Leadership Skills",
-        "Change & Transformation Skills",
+        "Team & Leadership Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -1962,7 +1962,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Harvard Business School Online",
       "name": "AI for Leaders",
       "competencyAreas": [
-        "Team & Leadership Skills",
+        "Team & Leadership Skills\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -1983,8 +1983,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Coursera / Wiley",
       "name": "Leading AI Projects and Building the Right Culture",
       "competencyAreas": [
-        "Team & Leadership Skills",
-        "Hybrid Work Skills",
+        "Team & Leadership Skills\r",
+        "Hybrid Work Skills\r",
         "Soft Skills"
       ],
       "skills": [
@@ -2008,8 +2008,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Coursera",
       "name": "Leading Cross-Functional AI Delivery",
       "competencyAreas": [
-        "Team & Leadership Skills",
-        "Change & Transformation Skills",
+        "Team & Leadership Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -2031,8 +2031,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "INSEAD",
       "name": "Reinventing Teams with AI",
       "competencyAreas": [
-        "Team & Leadership Skills",
-        "Change & Transformation Skills",
+        "Team & Leadership Skills\r",
+        "Change & Transformation Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -2054,7 +2054,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Smartnet Academy",
       "name": "AI for Managers: Lead AI Strategy, Teams & Innovation Without Coding",
       "competencyAreas": [
-        "Team & Leadership Skills",
+        "Team & Leadership Skills\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -2075,9 +2075,9 @@ window.CEAIO_MASTER_DATA = {
       "provider": "MIT Sloan Executive Education",
       "name": "Leading the AI-Driven Organization",
       "competencyAreas": [
-        "Technical & AI Literacy",
-        "Team & Leadership Skills",
-        "Future Capability Skills",
+        "Technical & AI Literacy\r",
+        "Team & Leadership Skills\r",
+        "Future Capability Skills\r",
         "Change & Transformation Skills"
       ],
       "skills": [
@@ -2100,7 +2100,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "INSEAD",
       "name": "Human Capital in the Age of AI",
       "competencyAreas": [
-        "Change & Transformation Skills",
+        "Change & Transformation Skills\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -2124,7 +2124,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Google Skills",
       "name": "Cloud Digital Leader Learning Path",
       "competencyAreas": [
-        "Platform & Strategic Tool Skills",
+        "Platform & Strategic Tool Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -2145,7 +2145,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Microsoft Learn",
       "name": "Get to know Microsoft Azure cloud platform for business professionals",
       "competencyAreas": [
-        "Platform & Strategic Tool Skills",
+        "Platform & Strategic Tool Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -2166,7 +2166,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Microsoft Learn",
       "name": "Introduction to AI in Azure (AI-901T00)",
       "competencyAreas": [
-        "Platform & Strategic Tool Skills",
+        "Platform & Strategic Tool Skills\r",
         "Hybrid Work Skills"
       ],
       "skills": [
@@ -2187,8 +2187,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "ESMT Berlin",
       "name": "Data Strategy for Enterprise AI",
       "competencyAreas": [
-        "Platform & Strategic Tool Skills",
-        "Data & Analytics Skills",
+        "Platform & Strategic Tool Skills\r",
+        "Data & Analytics Skills\r",
         "Technical & AI Literacy"
       ],
       "skills": [
@@ -2255,7 +2255,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "SAP Learning",
       "name": "Positioning AI in the Autonomous Enterprise",
       "competencyAreas": [
-        "Technical & AI Literacy",
+        "Technical & AI Literacy\r",
         "Strategy & Business Model Skills"
       ],
       "skills": [
@@ -2276,7 +2276,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Salesforce Trailhead",
       "name": "Become an Agentblazer Champion 2026",
       "competencyAreas": [
-        "Technical & AI Literacy",
+        "Technical & AI Literacy\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -2298,7 +2298,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "KI-Campus",
       "name": "Die fünf Säulen der KI-Ethik",
       "competencyAreas": [
-        "Future Capability Skills",
+        "Future Capability Skills\r",
         "Compliance Skills"
       ],
       "skills": [
@@ -2358,7 +2358,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "TrainingCred",
       "name": "AI Risk Management & Mitigation Training",
       "competencyAreas": [
-        "Compliance Skills",
+        "Compliance Skills\r",
         "Soft Skills"
       ],
       "skills": [
@@ -2398,8 +2398,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "INSEAD",
       "name": "Leading Change in an Age of Digital Transformation",
       "competencyAreas": [
-        "Future Capability Skills",
-        "Change & Transformation Skills",
+        "Future Capability Skills\r",
+        "Change & Transformation Skills\r",
         "Soft Skills"
       ],
       "skills": [
@@ -2424,8 +2424,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "ESMT Berlin",
       "name": "Leading Digital Transformation",
       "competencyAreas": [
-        "Future Capability Skills",
-        "Change & Transformation Skills",
+        "Future Capability Skills\r",
+        "Change & Transformation Skills\r",
         "Soft Skills"
       ],
       "skills": [
@@ -2449,8 +2449,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "MIT Sloan Executive Education",
       "name": "AI Adoption: Driving Business Value and Impact",
       "competencyAreas": [
-        "Future Capability Skills",
-        "Strategy & Business Model Skills",
+        "Future Capability Skills\r",
+        "Strategy & Business Model Skills\r",
         "Change & Transformation Skills"
       ],
       "skills": [
@@ -2493,7 +2493,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "London School of Economics",
       "name": "The AI-Ready Organisation: From Strategy to Execution",
       "competencyAreas": [
-        "Team & Leadership Skills",
+        "Team & Leadership Skills\r",
         "Change & Transformation Skills"
       ],
       "skills": [
@@ -2596,7 +2596,7 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Coursera / Skillshare",
       "name": "Leadership: Being a Confident and Effective Team Leader Specialization",
       "competencyAreas": [
-        "Hybrid Work Skills",
+        "Hybrid Work Skills\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -2619,8 +2619,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Microsoft Learn",
       "name": "Introduction to Microsoft's Responsible AI Approach",
       "competencyAreas": [
-        "Future Capability Skills",
-        "Governance Skills",
+        "Future Capability Skills\r",
+        "Governance Skills\r",
         "Compliance Skills"
       ],
       "skills": [
@@ -2643,8 +2643,8 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Stanford Graduate School of Business",
       "name": "Harnessing AI for Breakthrough Innovation and Strategic Impact",
       "competencyAreas": [
-        "Strategy & Business Model Skills",
-        "Technical & AI Literacy",
+        "Strategy & Business Model Skills\r",
+        "Technical & AI Literacy\r",
         "Future Capability Skills"
       ],
       "skills": [
@@ -2668,9 +2668,9 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Cambridge Judge Business School",
       "name": "Generative Artificial Intelligence: From Hype to Business Impact",
       "competencyAreas": [
-        "Strategy & Business Model Skills",
-        "Technical & AI Literacy",
-        "Governance Skills",
+        "Strategy & Business Model Skills\r",
+        "Technical & AI Literacy\r",
+        "Governance Skills\r",
         "Change & Transformation Skills"
       ],
       "skills": [
@@ -2694,9 +2694,9 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Wharton Executive Education",
       "name": "AI for Business",
       "competencyAreas": [
-        "Strategy & Business Model Skills",
-        "Technical & AI Literacy",
-        "Governance Skills",
+        "Strategy & Business Model Skills\r",
+        "Technical & AI Literacy\r",
+        "Governance Skills\r",
         "Data & Analytics Skills"
       ],
       "skills": [
@@ -2720,9 +2720,9 @@ window.CEAIO_MASTER_DATA = {
       "provider": "Oxford Saïd Business School",
       "name": "Oxford Executive Diploma in AI for Business",
       "competencyAreas": [
-        "Strategy & Business Model Skills",
-        "Team & Leadership Skills",
-        "Future Capability Skills",
+        "Strategy & Business Model Skills\r",
+        "Team & Leadership Skills\r",
+        "Future Capability Skills\r",
         "Change & Transformation Skills"
       ],
       "skills": [
