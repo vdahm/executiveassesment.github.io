@@ -598,6 +598,7 @@ function getCourseRecommendations(result) {
       const item = selected.get(id);
       item.matchedSkills.push({
         questionId: question.id,
+        question: question.question,
         skill: question.skill,
         competencyArea: question.competencyArea,
         score,
@@ -615,8 +616,41 @@ function getCourseRecommendations(result) {
   });
 }
 
+function getCourseRecommendationGroups(result) {
+  const categoryOrder = new Map(result.categories.map((category, index) => [category.title, index]));
+  const groups = new Map();
+
+  getCourseRecommendations(result).forEach(course => {
+    const matchesByArea = new Map();
+
+    course.matchedSkills.forEach(match => {
+      if (!matchesByArea.has(match.competencyArea)) matchesByArea.set(match.competencyArea, []);
+      matchesByArea.get(match.competencyArea).push(match);
+    });
+
+    matchesByArea.forEach((matches, competencyArea) => {
+      if (!groups.has(competencyArea)) {
+        groups.set(competencyArea, {competencyArea, courses: new Map()});
+      }
+      groups.get(competencyArea).courses.set(course.id, {...course, matchedSkills: matches});
+    });
+  });
+
+  return [...groups.values()]
+    .sort((a,b) => (categoryOrder.get(a.competencyArea) ?? 999) - (categoryOrder.get(b.competencyArea) ?? 999))
+    .map(group => ({
+      competencyArea: group.competencyArea,
+      courses: [...group.courses.values()].sort((a,b) => {
+        const aMin = Math.min(...a.matchedSkills.map(x => x.score));
+        const bMin = Math.min(...b.matchedSkills.map(x => x.score));
+        return aMin - bMin || a.provider.localeCompare(b.provider) || a.name.localeCompare(b.name);
+      })
+    }));
+}
+
 function renderCourseRecommendations(result) {
   const courses = getCourseRecommendations(result);
+  const groups = getCourseRecommendationGroups(result);
   const needs = courses.filter(c => c.needLevel === "training_need");
   const optional = courses.filter(c => c.needLevel === "optional_refresh");
   const affectedSkills = new Set(courses.flatMap(c => c.matchedSkills.map(m => m.questionId)));
@@ -625,31 +659,67 @@ function renderCourseRecommendations(result) {
     ? `${affectedSkills.size} Skill${affectedSkills.size===1?"":"s"} führen zu Kursempfehlungen. ${needs.length} Kurs${needs.length===1?"":"e"} decken mindestens einen klaren Weiterbildungsbedarf (Antwort 1–3) ab; ${optional.length} Kurs${optional.length===1?"":"e"} dienen ausschließlich der optionalen Vertiefung (Antwort 4). Antwort 5 erzeugt keine Kursempfehlung.`
     : "Alle 55 Fragen wurden mit 5 bewertet. Aktuell besteht kein Weiterbildungsbedarf.";
 
-  document.getElementById("courseRecommendations").innerHTML = courses.map(course => `
-    <article class="course-card">
-      <h4>${esc(course.name)}</h4><p class="course-provider">${esc(course.provider)}</p>
-      <p><strong>${course.needLevel === "training_need" ? "Weiterbildungsbedarf" : "Optionale Vertiefung"}</strong></p>
-      <p class="course-why"><strong>Passend zu:</strong> ${course.matchedSkills.map(m => `${esc(m.questionId)} – ${esc(m.skill)} (Antwort ${m.score})`).join("<br>")}</p>
-      ${course.note ? `<p class="course-why">${esc(course.note)}</p>` : ""}
-      <div class="course-meta">
-        <span><strong>Format:</strong> ${esc(course.delivery)}</span>
-        <span><strong>Verfügbarkeit:</strong> ${esc(course.availability)}</span>
-        <span><strong>Zugang:</strong> ${esc(course.booking)}</span>
-        <span><strong>Geprüft:</strong> ${esc(course.checkedAt)}</span>
+  document.getElementById("courseRecommendations").innerHTML = groups.map(group => {
+    const category = result.categories.find(item => item.title === group.competencyArea);
+    const questionCount = new Set(group.courses.flatMap(course => course.matchedSkills.map(match => match.questionId))).size;
+
+    return `<section class="course-category">
+      <div class="course-category-head">
+        <div>
+          <h3>${esc(group.competencyArea)}</h3>
+          <p>${group.courses.length} Kurs${group.courses.length===1?"":"e"} · ${questionCount} zugeordnete Frage${questionCount===1?"":"n"}</p>
+        </div>
+        ${category ? `<span class="course-score">Ø Kompetenzbereich ${category.score.toFixed(2)}</span>` : ""}
       </div>
-      ${course.url ? `<a class="course-link" href="${esc(course.url)}" target="_blank" rel="noopener noreferrer">Kurs öffnen</a>` : ""}
-    </article>`).join("");
+      <div class="course-grid">
+        ${group.courses.map(course => `
+          <article class="course-card">
+            <h4>${esc(course.name)}</h4>
+            <p class="course-provider">${esc(course.provider)}</p>
+            <p><strong>${course.needLevel === "training_need" ? "Weiterbildungsbedarf" : "Optionale Vertiefung"}</strong></p>
+
+            <div class="course-relations">
+              ${course.matchedSkills.map(match => `
+                <div class="course-relation">
+                  <span class="course-question-id">${esc(match.questionId)}</span>
+                  <p class="course-question"><strong>Frage:</strong> ${esc(match.question)}</p>
+                  <p class="course-skill"><strong>Skill:</strong> ${esc(match.skill)}</p>
+                  <p class="course-answer"><strong>Antwort:</strong> ${match.score} von 5</p>
+                </div>
+              `).join("")}
+            </div>
+
+            ${course.note ? `<p class="course-why">${esc(course.note)}</p>` : ""}
+            <div class="course-meta">
+              <span><strong>Format:</strong> ${esc(course.delivery)}</span>
+              <span><strong>Verfügbarkeit:</strong> ${esc(course.availability)}</span>
+              <span><strong>Zugang:</strong> ${esc(course.booking)}</span>
+              <span><strong>Geprüft:</strong> ${esc(course.checkedAt)}</span>
+            </div>
+            ${course.url ? `<a class="course-link" href="${esc(course.url)}" target="_blank" rel="noopener noreferrer">Kurs öffnen</a>` : ""}
+          </article>
+        `).join("")}
+      </div>
+    </section>`;
+  }).join("");
 }
 
 function reportCourseRecommendations(result) {
-  return getCourseRecommendations(result).map(course => `
-    <h3>${esc(course.name)} – ${esc(course.provider)}</h3>
-    <p><strong>${course.needLevel === "training_need" ? "Weiterbildungsbedarf" : "Optionale Vertiefung"}</strong><br>
-    ${course.matchedSkills.map(m => `${esc(m.questionId)} – ${esc(m.skill)} (Antwort ${m.score})`).join("<br>")}</p>
-    <table><tbody>
-      <tr><th>Format / Verfügbarkeit</th><td>${esc(course.delivery)}<br>${esc(course.availability)}</td></tr>
-      <tr><th>Link</th><td>${course.url ? `<a href="${esc(course.url)}">${esc(course.url)}</a>` : "–"}</td></tr>
-    </tbody></table>`).join("");
+  return getCourseRecommendationGroups(result).map(group => `
+    <h2>${esc(group.competencyArea)}</h2>
+    ${group.courses.map(course => `
+      <h3>${esc(course.name)} – ${esc(course.provider)}</h3>
+      <p><strong>${course.needLevel === "training_need" ? "Weiterbildungsbedarf" : "Optionale Vertiefung"}</strong></p>
+      ${course.matchedSkills.map(match => `
+        <p><strong>${esc(match.questionId)} – Frage:</strong> ${esc(match.question)}<br>
+        <strong>Skill:</strong> ${esc(match.skill)} · <strong>Antwort:</strong> ${match.score} von 5</p>
+      `).join("")}
+      <table><tbody>
+        <tr><th>Format / Verfügbarkeit</th><td>${esc(course.delivery)}<br>${esc(course.availability)}</td></tr>
+        <tr><th>Link</th><td>${course.url ? `<a href="${esc(course.url)}">${esc(course.url)}</a>` : "–"}</td></tr>
+      </tbody></table>
+    `).join("")}
+  `).join("");
 }
 
 function downloadBlob(blob, filename) {

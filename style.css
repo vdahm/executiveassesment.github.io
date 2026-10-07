@@ -859,3 +859,93 @@ p,.q-text,.focus,.note{
 .pdf-exporting .executive-report{max-width:none;width:1122px;padding:0;background:#fff}.pdf-exporting .report-page{width:1122px!important;height:auto!important;min-height:793px;box-sizing:border-box}.pdf-exporting .report-page+.report-page{margin-top:0!important}.pdf-exporting .report-footer{position:static;margin-top:20px}
 @media(max-width:900px){.executive-report{padding:0}.report-page{padding:20px;min-height:auto}.report-header{flex-wrap:wrap}.report-grid-top,.strengths-grid,.next-steps-grid{flex-direction:column}.report-grid-top>*,.strengths-grid>*,.next-steps-grid>*{flex:1 1 100%}.competency-card,.roadmap-card,.premium-course-grid .course-card,.next-steps-grid .recommendation-card{flex:1 1 100%}.competency-visual{flex-direction:column}.competency-visual .donut-legend{flex:1 1 100%;width:100%}.report-footer{position:static;margin-top:18px}.report-title-row{flex-direction:column;align-items:flex-start}.score-orbit{align-self:center}}
 @media print{.report-page{width:297mm;height:210mm;min-height:210mm;box-shadow:none;margin:0!important;page-break-after:always}.report-page:last-child{page-break-after:auto}.report-actions,.site-footer{display:none!important}}
+
+
+/* CEAIO course grouping layout 2026-10-07 */
+.premium-course-grid .course-category{
+  margin:18px 0 0;
+  padding-top:14px;
+  border-top:1px solid var(--consulting-line);
+}
+.premium-course-grid .course-category:first-child{
+  margin-top:0;
+  padding-top:4px;
+  border-top:0;
+}
+.premium-course-grid .course-category-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:16px;
+  margin-bottom:10px;
+}
+.premium-course-grid .course-category-head h3{
+  margin:0;
+  font-size:15px;
+  line-height:1.25;
+  color:var(--consulting-navy)!important;
+}
+.premium-course-grid .course-category-head p{
+  margin:4px 0 0;
+  font-size:9px;
+  color:#5b6b76!important;
+}
+.premium-course-grid .course-score{
+  flex:0 0 auto;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#f3efe5;
+  color:var(--consulting-navy);
+  font-size:9px;
+  font-weight:850;
+  white-space:nowrap;
+}
+.premium-course-grid .course-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+  align-items:stretch;
+}
+.premium-course-grid .course-card{
+  min-width:0;
+  width:auto;
+  display:flex;
+  flex-direction:column;
+}
+.premium-course-grid .course-relations{
+  display:grid;
+  gap:7px;
+  margin:8px 0 10px;
+}
+.premium-course-grid .course-relation{
+  padding:7px 8px;
+  border-left:3px solid var(--consulting-teal);
+  border-radius:6px;
+  background:#f7f9fa;
+}
+.premium-course-grid .course-question-id{
+  display:inline-block;
+  margin-bottom:3px;
+  color:var(--consulting-gold);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.premium-course-grid .course-relation p{
+  margin:2px 0!important;
+  font-size:9px!important;
+  line-height:1.38!important;
+  color:#4a5762!important;
+}
+.premium-course-grid .course-relation strong{
+  color:var(--consulting-navy)!important;
+}
+@media(max-width:900px){
+  .premium-course-grid .course-grid{
+    grid-template-columns:1fr!important;
+  }
+  .premium-course-grid .course-category-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
